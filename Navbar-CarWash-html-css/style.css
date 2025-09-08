@@ -2,14 +2,22 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Work Sans' , sans-serif;
   text-decoration: none;
   list-style: none;
 }
 
+html{
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
 body{
-  background: #011627;
+  background: #84c4cc;
   color: #fff;
+  font-family: 'Work Sans' , sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 nav{
@@ -24,13 +32,13 @@ nav{
   padding: 30px 15%;
   background: transparent;
   transition: all .50s ease;
-  background-color:#98afba;
-  box-shadow: 0 6px 7px 4px rgb(0,0,0,0.2);
+  background-color: #71afcb;
+  box-shadow: 0 6px 7px 4px rgba(0,0,0,0.2);
 }
 
 .logo{
   color: #fff;
-  font-size: 30px;
+  font-size: 2rem;
   font-weight: 700;
   cursor: pointer;
 }
@@ -43,7 +51,7 @@ nav{
   margin: 0px 5px;
   padding: 5px 10px;
   color: #fff;
-  font-size: 17px;
+  font-size: 1rem;
   font-weight: 500;
   transition: all .50s ease;
 }
@@ -54,18 +62,19 @@ nav{
 
 .btn{
   display: inline-block;
-  padding: 12px 30px;
+  padding: 0.75rem 2rem;
   color: #fff;
-  background: #00c9e0;
+  background:  #924562;
   border-radius: 30px;
-  font-size: 15px;
+  font-size: 0.9rem;
+  font-weight: 600;
   border: 2px solid transparent;
   transition: all .40s ease;
 }
 
 .btn:hover{
-  border: 2px solid  #00c9e0;
-  color:  #00c9e0;
+  border: 2px solid  #924562;
+  color:  #924562;
   background: transparent;
 }
 
@@ -82,27 +91,148 @@ section{
 }
 
 .hero{
-  height: 100vh;
-  width: 100%;
-  background-image: linear-gradient(to right, rgba(0,0,0,0.1), rgba(0,0,0,0.3)), url(img/background.jpg);
-  background-size: cover;
-  background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column; /* optional, main-text handles stacking */
+  height: 100vh;
+  margin-top: 70px; /* for nav offset */
+  background-image: linear-gradient(to right, rgba(0,0,0,0.1), rgba(0,0,0,0.3)), url(img/background.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 0 15%;
+}
+
+.slogan{
+  border: solid 2px #827baf;
+  padding: 5px 10px;
+  border-radius: 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 16px;
+  background-color: rgba(130, 123, 175, 0.2);
+}
+
+.slogan span{
+  color: #827baf;
+}
+
+.main-text{
+  display: flex;
+  flex-direction: column; /* stack elements vertically */
+  align-items: center;    /* center horizontally */
+  justify-content: center; /* center vertically inside hero */
   text-align: center;
+  gap: 25px; /* spacing between h1, p, buttons, stats */
+  
 }
 
 .main-text h1{
-  font-size: 90px;
+  font-size: 5rem;
   font-weight: 800;
   mask-border: 5px;
+  color: #fff;
 }
 
 .main-text p{
-  font-size: 30px;
-  font-weight: 600;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #dfeff5;
 }
+
+/* Buttons Centered */
+.hero-btn {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* space between buttons */
+  flex-wrap: wrap;
+}
+
+.btn.primary-btn {
+  background-color: #84c4cc; /* your color palette */
+  color: #fff;
+  border-radius: 30px;
+  padding: 12px 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-top: 50px;
+}
+
+.btn.primary-btn:hover {
+  background-color: transparent;
+  border: 2px solid #84c4cc;
+  color: #84c4cc;
+}
+
+.btn.secondary-btn {
+  background-color: #827baf;
+  color: #fff;
+  border-radius: 30px;
+  padding: 12px 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-top: 30px;
+}
+
+.btn.secondary-btn:hover {
+  background-color: transparent;
+  border: 2px solid #827baf;
+  color: #827baf;
+}
+
+/* Stats Section */
+.hero-stats {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  text-align: center;
+  color: #fff;
+}
+
+.hero-stats .stat h2 {
+  font-size: 2.5rem; /* 40px */
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.hero-stats .stat p {
+  font-size: 1.1rem; /* 18px */
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 950px) {
+  .hero-btn {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .hero-stats {
+    gap: 30px;
+  }
+  .hero-stats .stat h2 {
+    font-size: 2rem;
+  }
+  .hero-stats .stat p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 750px) {
+  .hero-btn {
+    gap: 10px;
+  }
+  .hero-stats .stat h2 {
+    font-size: 1.5rem;
+  }
+  .hero-stats .stat p {
+    font-size: 0.9rem;
+  }
+}
+
 
 @media (max-width: 1350px){
   nav{
@@ -121,10 +251,11 @@ section{
     font-size: 22px;
   }
   .logo{
-    font-size: 30px;
+    font-size: 1.8rem;
   }
   .btn{
-    padding: 9px 27px;
+    padding: 0.65rem 1.8rem;
+    font-size: 0.85rem;
   }
 }
 
@@ -164,6 +295,14 @@ section{
   .main-text h1{
     font-size: 50px;
   }
+  .logo{
+    font-size: 1.6rem;
+  }
+
+  .btn{
+    font-size: 0.8rem;
+    padding: 0.55rem 1.5rem;
+  }
 }
 
 /* ABOUT SECTION */
@@ -172,13 +311,14 @@ section{
   color: #fff;
   margin-bottom: 40px;
   text-align: center;
-  margin-top: 30px;
+  margin-top: 15px;
 }
 
 .about-section h2{
   text-align: center;
   margin-top: 90px;
   font-size: 50px;
+  color: #7396c3;
 }
 
 .about-text{
@@ -193,7 +333,7 @@ section{
 }
 
 .about-text h3{
-  color:#fff;
+  color: #905f8e;
   margin-top: 20px;
   font-size: 30px;
   text-align: left;
@@ -201,13 +341,14 @@ section{
 
 .about-text p{
   margin-bottom: 20px;
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin-top: 20px;
   text-align: left;
+  color: #f5f5f5;
 }
 
 .mission-card{
-  background-color:beige;
+  background-color: #827baf;
   padding: 25px;
   border-radius: 12px;
   text-align: center;
@@ -215,17 +356,18 @@ section{
   margin-top: 150px;
   height: 350px;
   margin-left: 30px;
+  color: #fff;
 }
 
 .mission-card h3{
   text-align: center;
-  color:#011627;
+  color: #f9f871;
   font-size: 25px;
   margin-top: 20px;
 }
 
 .mission-card p{
-  color:#011627;
+  color:#fff;
   text-align: center;
   font-size: 1.2rem;
   margin: 20px;
