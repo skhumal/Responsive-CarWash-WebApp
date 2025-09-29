@@ -32,7 +32,7 @@ nav{
   padding: 30px 15%;
   background: transparent;
   transition: all .50s ease;
-  background-color: #71afcb;
+  background-color: #1e695d;
   box-shadow: 0 6px 7px 4px rgba(0,0,0,0.2);
 }
 
@@ -50,21 +50,21 @@ nav{
 .navlist a{
   margin: 0px 5px;
   padding: 5px 10px;
-  color: #fff;
-  font-size: 1rem;
+  color: #fff5e1;
+  font-size: 1.3rem;
   font-weight: 500;
   transition: all .50s ease;
 }
 
 .navlist a:hover{
-  color: #fff;
+  color: #aebb9d;
 }
 
 .btn{
   display: inline-block;
   padding: 0.75rem 2rem;
-  color: #fff;
-  background:  #924562;
+  color: #fff5e1;
+  background:  #829f83;
   border-radius: 30px;
   font-size: 0.9rem;
   font-weight: 600;
@@ -90,55 +90,79 @@ section{
   padding: 0 15%;
 }
 
-.hero{
+.hero {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column; /* optional, main-text handles stacking */
+  flex-direction: column;
   height: 100vh;
   margin-top: 70px; /* for nav offset */
-  background-image: linear-gradient(to right, rgba(0,0,0,0.1), rgba(0,0,0,0.3)), url(img/background.jpg);
-  background-size: cover;
-  background-position: center;
-  padding: 0 15%;
+  width: 100%;
+  position: relative;
+
+  /* Two images with gradient overlays */
+  background:
+    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)) left / 50% 100% no-repeat,
+    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)) right / 50% 100% no-repeat,
+    url("img/background.jpg") left / 50% 100% no-repeat,
+    url("img/Shisanyama.jpg") right / 50% 100% no-repeat;
+}
+
+.main-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  justify-content: center; 
+  text-align: center;
+  gap: 25px; 
+  color: white;
+  z-index: 1;
+}
+
+.stat h2{
+  color: #fff5e1;
+}
+
+.stat p{
+  color: #d8d7bd;
 }
 
 .slogan{
-  border: solid 2px #827baf;
+  border: solid 2px #aebb9d;
   padding: 5px 10px;
   border-radius: 15px;
   display: inline-flex;
   align-items: center;
   gap: 6px;
   font-size: 16px;
-  background-color: rgba(130, 123, 175, 0.2);
+  background-color: rgba(174, 187, 157, 0.2);
 }
 
 .slogan span{
-  color: #827baf;
+  color: #aebb9d;
 }
 
 .main-text{
   display: flex;
-  flex-direction: column; /* stack elements vertically */
-  align-items: center;    /* center horizontally */
-  justify-content: center; /* center vertically inside hero */
+  flex-direction: column;
+  align-items: center;  
+  justify-content: center; 
   text-align: center;
-  gap: 25px; /* spacing between h1, p, buttons, stats */
-  
+  gap: 25px; 
 }
 
 .main-text h1{
   font-size: 5rem;
   font-weight: 800;
   mask-border: 5px;
-  color: #fff;
+  color: #fff5e1;
 }
+
 
 .main-text p{
   font-size: 1.5rem;
   font-weight: 500;
-  color: #dfeff5;
+  color: #d8d7bd;
 }
 
 /* Buttons Centered */
@@ -151,7 +175,7 @@ section{
 }
 
 .btn.primary-btn {
-  background-color: #84c4cc; /* your color palette */
+  background-color: #829f83; /* your color palette */
   color: #fff;
   border-radius: 30px;
   padding: 12px 30px;
@@ -162,13 +186,13 @@ section{
 
 .btn.primary-btn:hover {
   background-color: transparent;
-  border: 2px solid #84c4cc;
-  color: #84c4cc;
+  border: 2px solid #aebb9d;
+  color: #aebb9d;
 }
 
 .btn.secondary-btn {
-  background-color: #827baf;
-  color: #fff;
+  background-color: #fff5e1;
+  color: #54846e;
   border-radius: 30px;
   padding: 12px 30px;
   font-weight: 600;
@@ -179,8 +203,8 @@ section{
 
 .btn.secondary-btn:hover {
   background-color: transparent;
-  border: 2px solid #827baf;
-  color: #827baf;
+  border: 2px solid #54846e;
+  color: #54846e;
 }
 
 /* Stats Section */
@@ -349,7 +373,7 @@ section{
 }
 
 .mission-card{
-  background-color: #827baf;
+  background-color: #829f83;
   padding: 25px;
   border-radius: 12px;
   text-align: center;
@@ -403,7 +427,7 @@ section{
 }
 
 .icon-circle {
-  background-color: #827baf; /* matches your theme */
+  background-color: #829f83; /* matches your theme */
   color: #fff;
   border-radius: 50%;
   padding: 12px;
@@ -448,7 +472,7 @@ section{
 }
 
 .value-item {
-  flex: 1 1 30%; /* 3 in a row on laptops */
+  flex: 1 1 22%; /* 3 in a row on laptops */
   text-align: center;
 }
 
@@ -465,7 +489,7 @@ section{
 }
 
 .icon-circle {
-  background-color: #827baf; /* default purple */
+  background-color: #54846e; /* default purple */
   color: #fff;
   border-radius: 50%;
   padding: 20px;
@@ -477,5 +501,5 @@ section{
 }
 
 .icon-circle.community-icon {
-  background-color: #7396c3; /* different color for Community Bond */
+  background-color: #aebb9d; /* different color for Community Bond */
 }
