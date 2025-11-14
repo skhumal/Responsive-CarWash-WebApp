@@ -73,8 +73,8 @@ nav{
 }
 
 .btn:hover{
-  border: 2px solid  #924562;
-  color:  #924562;
+  border: 2px solid  #aebb9d;
+  color:  #aebb9d;
   background: transparent;
 }
 
@@ -99,14 +99,14 @@ section{
   margin-top: 70px; /* for nav offset */
   width: 100%;
   position: relative;
-
+  border-bottom: 2px solid ;
   /* Two images with gradient overlays */
   background:
     linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)) left / 50% 100% no-repeat,
-    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)) right / 50% 100% no-repeat,
+   linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)) right / 50% 100% no-repeat,
     url("img/background.jpg") left / 50% 100% no-repeat,
     url("img/Shisanyama.jpg") right / 50% 100% no-repeat;
-}
+} 
 
 .main-text {
   display: flex;
