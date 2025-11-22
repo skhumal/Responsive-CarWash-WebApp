@@ -1,3 +1,15 @@
+:root{
+  /* Brand palette */
+  --primary: #00747d;
+  --primary-dark: #1e695d;
+  --secondary: #4181b7;
+  --accent: #b37ebe;
+  --muted: #aebb9d;
+  --neutral-white: #ffffff;
+  --neutral-dark: #222222;
+  --soft-bg: #f3f5f7;
+}
+
 *{
   padding: 0;
   margin: 0;
@@ -12,9 +24,10 @@ html{
 }
 
 body{
+  background: linear-gradient(180deg, #eaf6f6 0%, #e1f0f2 100%);
   background: #84c4cc;
   color: #fff;
-  font-family: 'Oswald' , roboto;
+  font-family:  'Work Sans', 'Oswald', Roboto, system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial;
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.6;
@@ -29,10 +42,10 @@ nav{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 30px 15%;
-  background: transparent;
+  padding: 22px 10%;
+  background: rgba(12,15,16,0.18); /* subtle, lets hero show */
   transition: all .50s ease;
-  background-color: #1e695d;
+  background-color: rgba(34,34,34,0.35);
   box-shadow: 0 6px 7px 4px rgba(0,0,0,0.2);
 }
 
@@ -41,53 +54,62 @@ nav{
   font-size: 2rem;
   font-weight: 700;
   cursor: pointer;
+  letter-spacing: 0.6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .navlist{
   display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .navlist a{
-  margin: 0px 5px;
-  padding: 5px 10px;
-  color: #fff5e1;
-  font-size: 1.3rem;
-  font-weight: 500;
-  transition: all .50s ease;
+  margin: 0px 6px;
+  padding: 6px 10px;
+  color: rgba(255,255,255,0.95);
+  font-size: 1.05rem;
+  font-weight: 600;
+  transition: color .25s ease, transform .15s ease;
 }
 
 .navlist a:hover{
-  color: #aebb9d;
+  color: var(--muted);
+  transform: translateY(-2px);
 }
 
 .btn{
   display: inline-block;
-  padding: 0.75rem 2rem;
-  color: #fff5e1;
-  background:  #829f83;
+  padding: 0.6rem 1.6rem;
+  color: var(--neutral-white);
+  background: var(--accent);
   border-radius: 30px;
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-size: 0.95rem;
+  font-weight: 700;
   border: 2px solid transparent;
-  transition: all .40s ease;
+  transition: all .28s ease;
+  box-shadow: 0 6px 18px rgba(179, 126, 190, 0.12);
 }
 
 .btn:hover{
-  border: 2px solid  #aebb9d;
-  color:  #aebb9d;
+  border: 2px solid var(--muted);
+  color: var(--muted);
   background: transparent;
+  box-shadow: none;
 }
 
 #menu-icon{
   color: #fff;
-  font-size: 38px;
+  font-size: 34px;
   z-index: 10001;
   cursor: pointer;
   display: none;
 }
 
 section{
-  padding: 0 15%;
+  padding: 0 10%;
 }
 
 .hero {
@@ -96,17 +118,25 @@ section{
   justify-content: center;
   flex-direction: column;
   height: 100vh;
-  margin-top: 70px; /* for nav offset */
   width: 100%;
   position: relative;
-  border-bottom: 2px solid ;
+  overflow: hidden;
+  border-bottom: 2px solid rgba(0,0,0,0.06);
   /* Two images with gradient overlays */
   background:
-    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)) left / 50% 100% no-repeat,
-   linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)) right / 50% 100% no-repeat,
+    linear-gradient(180deg, rgba(0,0,0,0.40), rgba(0,0,0,0.40)) left / 50% 100% no-repeat,
+   linear-gradient(180deg, rgba(65,129,183,0.22), rgba(65,129,183,0.08)) right / 50% 100% no-repeat,
     url("img/background.jpg") left / 50% 100% no-repeat,
     url("img/Shisanyama.jpg") right / 50% 100% no-repeat;
+    background-color: #0000;
 } 
+
+.hero::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
 
 .main-text {
   display: flex;
@@ -114,9 +144,13 @@ section{
   align-items: center;  
   justify-content: center; 
   text-align: center;
-  gap: 25px; 
+  gap: 20px; 
   color: white;
-  z-index: 1;
+  z-index: 2;
+  position: relative;
+  padding: 6rem 1.25rem;
+  max-width: 1100px;
+  color: var(--neutral-white);
 }
 
 .stat h2{
@@ -128,14 +162,15 @@ section{
 }
 
 .slogan{
-  border: solid 2px #aebb9d;
-  padding: 5px 10px;
-  border-radius: 15px;
+  border: solid 2px rgba(174,187,157,0.22);
+  padding: 6px 12px;
+  border-radius: 999px;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-size: 16px;
-  background-color: rgba(174, 187, 157, 0.2);
+  gap: 8px;
+  font-size: 0.95rem;
+  background-color: rgba(174, 187, 157, 0.08);
+  color: var(--neutral-white);
 }
 
 .slogan span{
