@@ -182,15 +182,6 @@ section{
   color: #aebb9d;
 }
 
-.main-text{
-  display: flex;
-  flex-direction: column;
-  align-items: center;  
-  justify-content: center; 
-  text-align: center;
-  gap: 25px; 
-}
-
 .main-text h1{
   font-size: clamp(34px, 5vw, 64px);
   font-weight: 800;
@@ -208,7 +199,7 @@ section{
 }
 
 /* Buttons Centered */
-.hero-btn {
+.hero-button {
   margin-top: 20px;
   display: flex;
   justify-content: center;
