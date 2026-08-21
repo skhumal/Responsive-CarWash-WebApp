@@ -1,13 +1,17 @@
 :root{
   /* Brand palette */
-  --primary: #00747d;
-  --primary-dark: #1e695d;
-  --secondary: #4181b7;
-  --accent: #b37ebe;
-  --muted: #aebb9d;
+  --primary: #e30613;       /* Brand Red */
+  --primary-dark: #b8000b;  /* Dark Red */
+  --secondary: #0066cc;     /* Brand Blue */
+  --secondary-dark: #004c99;
   --neutral-white: #ffffff;
   --neutral-dark: #222222;
-  --soft-bg: #f3f5f7;
+
+  /* Supporting Colours */
+  --text-dark: #333940;
+  --soft-bg: #f4f7fa;
+  --light-blue: #eaf3ff;
+  --light-red: #fff0f1;
 }
 
 *{
@@ -25,8 +29,7 @@ html{
 
 body{
   background: linear-gradient(180deg, #eaf6f6 0%, #e1f0f2 100%);
-  background: #84c4cc;
-  color: #fff;
+  color: var(--text-dark);
   font-family:  'Work Sans', 'Oswald', Roboto, system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial;
   font-weight: 400;
   font-size: 1rem;
@@ -43,16 +46,14 @@ nav{
   align-items: center;
   justify-content: space-between;
   padding: 22px 10%;
-  background: rgba(12,15,16,0.18); /* subtle, lets hero show */
+  background: rgba(20,25,30,0.92); /* subtle, lets hero show */
   transition: all .50s ease;
-  background-color: rgba(34,34,34,0.35);
-  box-shadow: 0 6px 7px 4px rgba(0,0,0,0.2);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
 }
 
 .logo{
-  color: #fff;
-  font-size: 2rem;
-  font-weight: 700;
+  font-size: 1rem;
+  font-weight: 800;
   cursor: pointer;
   letter-spacing: 0.6px;
   display: flex;
@@ -76,28 +77,28 @@ nav{
 }
 
 .navlist a:hover{
-  color: var(--muted);
+  color: var(--primary);
   transform: translateY(-2px);
 }
 
 .btn{
   display: inline-block;
-  padding: 0.6rem 1.6rem;
+  padding: 0.65rem 1.6rem;
   color: var(--neutral-white);
-  background: var(--accent);
+  background: var(--primary);
   border-radius: 30px;
   font-size: 0.95rem;
   font-weight: 700;
-  border: 2px solid transparent;
+  border: 2px solid var(--primary);
   transition: all .28s ease;
-  box-shadow: 0 6px 18px rgba(179, 126, 190, 0.12);
+  box-shadow: 0 6px 18px rgba(227, 6, 19, 0.20);
+  text-decoration: none;
 }
 
 .btn:hover{
-  border: 2px solid var(--muted);
-  color: var(--muted);
-  background: transparent;
-  box-shadow: none;
+  border: 2px solid var(--primary-dark);
+  color: var(--neutral-white);
+  background: var(--primary-dark);
 }
 
 #menu-icon{
@@ -125,7 +126,7 @@ section{
   /* Two images with gradient overlays */
   background:
     linear-gradient(180deg, rgba(0,0,0,0.40), rgba(0,0,0,0.40)) left / 50% 100% no-repeat,
-   linear-gradient(180deg, rgba(65,129,183,0.22), rgba(65,129,183,0.08)) right / 50% 100% no-repeat,
+   linear-gradient(180deg, rgba(3, 35, 61, 0.22), rgba(65,129,183,0.08)) right / 50% 100% no-repeat,
     url("img/background.jpg") left / 50% 100% no-repeat,
     url("img/Shisanyama.jpg") right / 50% 100% no-repeat;
     background-color: #0000;
@@ -157,19 +158,23 @@ section{
   color: #fff5e1;
 }
 
+.stat span{
+  color: var(--primary);
+}
+
 .stat p{
-  color: #d8d7bd;
+  color: #fff5e1;
 }
 
 .slogan{
-  border: solid 2px rgba(174,187,157,0.22);
+  border: solid 2px var(--primary);
   padding: 6px 12px;
   border-radius: 999px;
   display: inline-flex;
   align-items: center;
   gap: 8px;
   font-size: 0.95rem;
-  background-color: rgba(174, 187, 157, 0.08);
+  background-color: rgba(227, 6, 19, 0.10);
   color: var(--neutral-white);
 }
 
@@ -179,7 +184,7 @@ section{
 }
 
 .slogan span{
-  color: #aebb9d;
+  color: var(--primary);
 }
 
 .main-text h1{
@@ -199,51 +204,45 @@ section{
 }
 
 /* Buttons Centered */
-.hero-button {
-  margin-top: 20px;
+.hero-buttons {
   display: flex;
   justify-content: center;
-  gap: 16px; /* space between buttons */
+  gap: 100px; /* space between buttons */
   flex-wrap: wrap;
   z-index: 2;
 }
 
 .btn.primary-btn {
-  background-color: var(--accent); 
+  background-color: var(--primary); 
   color: var(--neutral-white);
+  border: 2px solid var(--primary);
   border-radius: 30px;
   padding: 12px 30px;
   font-weight: 700;
   transition: all 0.25s ease;
  /* margin-top: 50px; */
-  box-shadow: 0 10px 22px rgba(179,126,190,0.12);
+  box-shadow: 0 10px 22px rgba(227,6,19,0.25);
 }
 
 .btn.primary-btn:hover {
-  background-color: transparent;
-  border: 2px solid var(--muted);
-  color: var(--muted);
-  box-shadow: none;
+  background-color: var(--primary-dark);
+  border: 2px solid var(--primary-dark);
 }
 
 .btn.secondary-btn {
-  background-color: var(--neutral-white);
-  color: var(--primary);
+  background-color: var(--secondary);
+  color: var(--neutral-white);
+  border: 2px solid var(--secondary);
   border-radius: 30px;
   padding: 12px 30px;
   font-weight: 700;
   transition: all 0.25s ease;
-/*  margin-top: 30px; 
-  margin-left: 1rem; */
-  box-shadow: 0 6px 18px rgba(0,116,125,0.06);
+  box-shadow: 0 8px rgba(0,102,204,0.20);
 }
 
 .btn.secondary-btn:hover {
-  background-color: transparent;
-  border: 2px solid var(--primary);
-  color: var(--neutral-white);
-  background: linear-gradient(90deg, var(--primary), var(--secondary));
-  color: var(--neutral-white);
+  border-color: var(--secondary-dark);
+  background: var(--secondary-dark);
 }
 
 /* Stats Section */
@@ -300,10 +299,9 @@ section{
 }
 
 .about-text h3{
-  color: var(--accent);
+  color: var(--primary);
   margin-top: 12px;
   font-size: 26px;
-  text-align: left;
 }
 
 .about-text p{
@@ -315,7 +313,7 @@ section{
 }
 
 .mission-card{
-  background: linear-gradient(180deg, rgba(0,116,125,0.12), rgba(65,129,183,0.06));
+  background: linear-gradient(135deg, rgba(227,6,19,0.08), rgba(0,102,204,0.08));
   padding: 25px;
   border-radius: 12px;
   text-align: center;
@@ -325,11 +323,12 @@ section{
   /* margin-left: 30px; */
   color: var(--neutral-dark);
   box-shadow: 0 12px 30px rgba(6, 22, 34, 0.08);
+  border-top: 4px solid var(--primary);
 }
 
 .mission-card h3{
   text-align: center;
-  color: #f9f871;
+  color: var(--primary);
   font-size: 22px;
   margin-top: 8px;
 }
@@ -347,7 +346,7 @@ section{
 }
 
 .ratings .stars {
-  color: #f9f871; /* same yellow as mission heading */
+  color: var(--primary); /* same yellow as mission heading */
   font-size: 1.6rem;
   margin-bottom: 6px;
   line-height: 1;
@@ -372,13 +371,13 @@ section{
   background-color: var(--primary); /* matches your theme */
   color: var(--neutral-white);
   border-radius: 50%;
-  padding: 12px;
-  display: flex;
+  padding: 18px;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.1rem;
+  font-size: 1.6rem;
   flex-shrink: 0; /* keeps circle size */
-  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
 }
 
 .about-item h3 {
@@ -425,7 +424,7 @@ section{
 .value-item h3 {
   margin-top: 10px;
   font-size: 1.05rem;
-  color: var(--accent);
+  color: var(--primary);
 }
 
 .value-item p {
@@ -447,16 +446,16 @@ section{
 }
 
 .icon-circle.community-icon {
-  background-color: #aebb9d; /* different color for Community Bond */
+  background-color: var(--secondary); /* different color for Community Bond */
 }
 
 /* Services Section */
 .story-intro{
   font-size: 1.1rem;
-  color: var(--primary-dark);
+  color: var(--text-dark);
   margin-bottom: 30px;
   text-align: center;
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 .services-section h2{
@@ -468,9 +467,9 @@ section{
 
 .services-section h3{
   text-align: center;
-  margin-top: 80px;
+  margin-top: 40px;
   font-size: 22px;
-  color: var(--secondary);
+  color: var(--primary);
 }
 
 #services {
@@ -494,10 +493,12 @@ section{
   width: 300px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
+  border-top: 4px solid var(--secondary);
 }
 
 .service-box:hover {
   transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 102, 204, 0.15);
 }
 
 .service-box h3 {
@@ -508,7 +509,7 @@ section{
 .price {
   font-weight: bold;
   margin-bottom: 15px;
-  color: #e74c3c;
+  color: var(--primary);
 }
 
 .service-box ul {
@@ -522,17 +523,73 @@ section{
   color: #555;
 }
 
-.btn {
-  display: inline-block;
-  padding: 10px 20px;
-  background: #3498db;
-  color: #fff;
-  border-radius: 5px;
-  text-decoration: none;
+/* Braai Specials */
+
+#braai-specials {
+  text-align: center;
+  padding: 50px 20px;
+  background: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
-.btn:hover {
-  background: #2980b9;
+/* Add-On Services Section */
+#addOn-Services{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  background: #f4f4f4;
+}
+
+#addOn-Services h2{
+  color: var(--primary);
+}
+
+#addOn-Services h4{
+  color: var(--primary)
+}
+.addOn{
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+
+.addOnBox{
+  display: flex;
+  flex-direction: column;
+  margin: 50px 80px;
+}
+
+/* Save Deals Section */
+.box-container{
+  
+}
+.box-1{
+  width: 400px;
+  height: 400px;
+  background: var(--light-red);
+  border-radius: 25px;
+  padding: 30px;
+}
+
+.save-deal{
+  background: var(--soft-bg);
+  border: 1px solid var(--secondary-dark);
+  margin: auto;
+  display: inline-block;
+  border-radius: 20px;
+  font-size: 12px;
+  color: var(--secondary-dark);
+  padding: 3px 6px;
+  justify-self: flex-end;
+}
+
+.combo-1{
+  display: flex;
+  justify-content: space-between;
 }
 
 
